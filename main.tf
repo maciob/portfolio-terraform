@@ -33,6 +33,6 @@ module "Compute" {
 module "Helm" {
     #==================== SOURCE
     source                = "./Modules/Helm"
-    #==================== DEPENDS ON NETWORK
     #==================== VARS
+    dns_config            = var.dns_config
 }

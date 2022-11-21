@@ -10,5 +10,8 @@ resource "helm_release" "argo_cd" {
         name = "server.service.type"
         value = "LoadBalancer"
     }
-
+    set {
+        name = "server.service.annotations.external-dns\\.alpha\\.kubernetes\\.io/hostname"
+        value = "argo.mbekas-portfolio.click"
+    }
 }

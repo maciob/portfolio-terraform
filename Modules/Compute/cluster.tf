@@ -8,8 +8,9 @@ resource "aws_eks_cluster" "AWS_CLUSTER" {
     version  = var.cluster_config["version"]
     tags = {
         Name         = var.cluster_config["name"]
-        created_by   = var.tags["created_by"]
-        bootcamp     = var.tags["bootcamp"]
+        Owner       = var.tags["Owner"]
+        expiration_date = var.tags["expiration_date"]
+        bootcamp    = var.tags["bootcamp"]
     }
 }
 
@@ -27,7 +28,8 @@ resource "aws_eks_node_group" "AWS_NODE" {
 
     tags = {
         Name         = var.node_group_config["name"]
-        created_by   = var.tags["created_by"]
-        bootcamp     = var.tags["bootcamp"]
+        Owner       = var.tags["Owner"]
+        expiration_date = var.tags["expiration_date"]
+        bootcamp    = var.tags["bootcamp"]
     }
 }

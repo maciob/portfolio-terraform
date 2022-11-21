@@ -5,8 +5,9 @@ resource "aws_vpc" "AWS_VPC" {
   instance_tenancy     = var.vpc_config["instance_tenancy"]
   tags = {
     Name               = "MBekas-portfolio-VPC"
-    created_by         = var.tags["created_by"]
-    bootcamp           = var.tags["bootcamp"]
+    Owner       = var.tags["Owner"]
+    expiration_date = var.tags["expiration_date"]
+    bootcamp    = var.tags["bootcamp"]
   }
 }
 
@@ -18,8 +19,8 @@ resource "aws_subnet" "AWS_SUBNETS" {
   map_public_ip_on_launch = var.subnets[count.index]["public_ip"]
   tags = {
     Name                  = "MBekas-portfolio-SUBNET"
-    created_by            = var.tags["created_by"]
-    bootcamp              = var.tags["bootcamp"]
+    Owner       = var.tags["Owner"]
+    expiration_date = var.tags["expiration_date"]
+    bootcamp    = var.tags["bootcamp"]
   }
-
 }

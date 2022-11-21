@@ -2,7 +2,8 @@ resource "aws_internet_gateway" "AWS_IGW" {
     vpc_id = aws_vpc.AWS_VPC.id
     tags = {
         Name        = "MBekas-portfolio-IGW"
-        created_by  = var.tags["created_by"]
+        Owner       = var.tags["Owner"]
+        expiration_date = var.tags["expiration_date"]
         bootcamp    = var.tags["bootcamp"]
     }
 }
@@ -15,7 +16,8 @@ resource "aws_route_table" "AWS_RT" {
     }
     tags = {
         Name        = "MBekas-portfolio-RT"
-        created_by  = var.tags["created_by"]
+        Owner       = var.tags["Owner"]
+        expiration_date = var.tags["expiration_date"]
         bootcamp    = var.tags["bootcamp"]
     }
 }
@@ -30,7 +32,8 @@ resource "aws_security_group" "AWS_SEC" {
     vpc_id = aws_vpc.AWS_VPC.id
     tags = {
         Name        = "MBekas-portfolio-SEC"
-        created_by  = var.tags["created_by"]
+        Owner       = var.tags["Owner"]
+        expiration_date = var.tags["expiration_date"]
         bootcamp    = var.tags["bootcamp"]
     }
 }
